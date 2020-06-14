@@ -1,0 +1,7 @@
+base   rankingtable
+author luffah
+email  contact@luffah.xyz
+date   2020-06-13
+name   Ranking Table
+desc   Show a sorted table (on 1 column). Rendering is done on server-side.
+url    https://github.com/luffah/dokuwiki-rankingtable
