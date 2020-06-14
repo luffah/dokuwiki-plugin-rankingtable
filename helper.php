@@ -173,11 +173,23 @@ class helper_plugin_rankingtable extends DokuWiki_Plugin {
     foreach (self::_gentable_rows($datas, $desc, $order_by, $reverse) as $row) {
       $ret .= '<tr>';
       $idx = 0;
-      foreach ($row as $cell)
+      foreach ($row as $cell) {
+        $rendered = preg_replace(
+          array(
+            '/\*\*([^*]+)\*\*/',
+            '/\/\/([^\/]+)\/\//',
+              '/__([^_]+)__/'
+          ),
+          array(
+           '<strong>$1</strong>',
+           '<em>$1</em>',
+           '<em class="u">$1</em>'
+          ), $cell);
         if ($heading_col == $idx++)
-          $ret .= '<th>'.$cell.'</th>';
+          $ret .= '<th>'.$rendered.'</th>';
         else
-          $ret .= '<td>'.$cell.'</td>';
+          $ret .= '<td>'.$rendered.'</td>';
+      }
       $ret .= '</tr>';
     }
     $ret .= '</tbody>';

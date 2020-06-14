@@ -19,5 +19,6 @@ will show
 | A   | 3     |
 
 
-To get descending order use `desc` instead of `asc'.
-
+To get descending order use `desc` instead of `asc`.
+The plugin doesn't support complex formatting.
+However, you can use `**bold**`, `//italic//`, `__underlined__`, `<del>stroke</del>` in columns that are not used as sorting key.
